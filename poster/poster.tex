@@ -17,8 +17,10 @@
 \setmainfont{CMU Serif} % only works with lua
 \setsansfont{CMU Sans Serif}
 
-%\usepackage[size=custom,width=120,height=72,scale=1.0]{beamerposter}
-\usepackage[orientation=portrait,size=a0,scale=1.2]{beamerposter}
+% 84.1 x 118.9 cm
+% The dimensions of the poster should be in A0 portrait format (120 cm high and 85 cm wide)
+%\usepackage[size=custom,width=84.1,height=118.9,scale=1.4]{beamerposter}
+\usepackage[orientation=portrait,size=a0,scale=1.2]{beamerposter} 
 
 \usetheme{gemini}
 \usecolortheme{gemini}
@@ -41,7 +43,7 @@
 
 \newlength{\sepwidth}
 \newlength{\colwidth}
-\setlength{\sepwidth}{0.025\paperwidth}
+\setlength{\sepwidth}{0.005\paperwidth}
 \setlength{\colwidth}{0.47\paperwidth}
 
 \newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
@@ -61,8 +63,9 @@
 % ====================
 
 \footercontent{
-  \includegraphics[height=5cm]{pics/qr} \hfill
-  \hspace{12cm} XIM5 2022, Würzburg \hfill
+  \includegraphics[height=5cm]{pics/qr}
+  {\LaTeX} \& R code in git repo \hfill
+  \hspace{0cm} XIM5 2022, Würzburg \hfill
   %\href{https://www.github.com/aplantc0}{github.com/aplantc0}
   \includegraphics[height=5cm]{pics/logo_mendelu}
   \includegraphics[height=5cm]{pics/logo_czechglobe}
@@ -90,30 +93,31 @@
 
 \begin{column}{\colwidth}
 
-    \begin{alertblock}{Context}
+    \begin{alertblock}{Hypetheses and questions}
         \begin{itemize}
-            \item \textbf{Wood formation dynamics} in \textbf{Scots pine} is still not explained partly due to the more complex wood anatomy.
-            \item Biggest xylem cells in angiosperm are the \textbf{vessel} cells.
-            \item The \textbf{gradient of size and frequency} of vessel over the tree-rings one of the characteristic of the earlywood-latewood transition in angiosperms.
-            \item Recent studies bring new insights on the impact of climatic parameters on vessel development but the dynamic of formation is still unknown.
-            \item \textbf{Water regime} is the main factor impacting \textbf{cell development} through its action on the turgor pressure.
-            \item \textbf{Water use} by the tree could be evaluate via the \textbf{sap flow} density trait.
+            \item 
+            \item 
+            \item 
+            \item TRW vs. deeper look into xylem morphology?
         \end{itemize}
     \end{alertblock}
 
-    \begin{block}{Objectives}
-        \begin{enumerate}
-            \item To evaluate the xylem vessel formation dynamic in ring- and diffuse- porous species;
-            \item To explore the relationship between the timing of vessel developmental phases and seasonal sap flow pattern by taking account of climatic conditions and the water use strategy of the tree species.
-        \end{enumerate}
+    \begin{block}{Methodology}
+
+        %\vskip-1.9ex
+        \heading{Xylogenesis}
+            Weekly microcore sampling, sample preparation, number of cells in each phase was measured under the light microscope with x10-x20 magnification, cell phases/types: i) cambial; ii) enlarging; iii) cell-wall thickening; iv) mature.
+        \heading{Xylem morphology}
+            Image of the fully formed annual ring, image processing with ImageMagick, ImageJ measurements
+        \heading{Dendroclimatology}
+            TRW measurements, cross-dating, gsom climate-growth relationships (+dead vs. alive)
     \end{block}
 
-    \begin{block}{Water use: Sap flow under water stress episodes}
-        askjdasdj
-    \end{block}
-
-    \begin{block}{Ring- vs. diffuse- porous wood structure}
-        ajsdnajksdnkaj
+    \begin{block}{Drought stress}
+            \begin{figure}
+                \centering \includegraphics[width=1\textwidth]{pics/sap}
+                \caption{Sap flow during two years of 2020 and 2021}
+            \end{figure}
     \end{block}
 
 \end{column}
@@ -124,18 +128,18 @@
 
 \begin{column}{\colwidth}
 
-    \begin{block}{Approach}
-        \begin{itemize}
-            \item Stem radial growth and sap flow density followed over the years 2017, 2018 and 2019. 
-            \item Estimation of Tree Water Deficit episodes following Zweiffel et al. (2016).
-            \item Wood formation has been monitoring by sampling wood microcores weekly from April to November.
-Counting of all xylem cells in each developmental phases and measurement of the vessel area on all samples. 
-                Vessels in secondary cell wall deposition are pooled with mature vessels.
-        \end{itemize}
-    \end{block}
+    \begin{block}{Results}
+        \heading{Tree ring width}
+            %\begin{figure}
+            %    \centering \includegraphics[width=0.6\textwidth]{pics/dsob}
+            %    \caption{Alive and dead Scots pine TRW chronologies}
+            %\end{figure}
 
-    \begin{block}{Sap flow and wood formation dynamics}
-        aksdjakjsdaksjd
+        \heading{Xylo- \& morphogenesis}
+            \begin{figure}
+                \centering \includegraphics[width=1\textwidth]{pics/xmg}
+                \caption{TRD -- tracheid radial diameter, CWT -- cell wall thickness, DOY -- day of the beginning of cell wall thichening (thus, TRD has already been formed}
+            \end{figure}
     \end{block}
 
 	\end{column}
@@ -148,9 +152,8 @@ Counting of all xylem cells in each developmental phases and measurement of the 
     \begin{block}{What is next?}
         \raggedleft
         \begin{itemize}
-            \item To include growth and wood formation data from 2017 and 2019, and oak wood formation dynamic.
-            \item To estimate a time residence in enlargement phase and total developmental duration for vessel formation.
-            \item To explore the temporal correlation between sap flow and vessel timing in order to estimate when vessels are functional.
+            \item To study wood formation in the next years and more pine plots
+            \item To study mg and dh on the upper limit of species distribution
         \end{itemize}
     \end{block}
 \end{column}
