@@ -4,7 +4,6 @@
 \setmainlanguage{english}
 \setotherlanguages{russian,czech} % \textlang{russian}{ы}
 
-% 84.1 x 118.9 cm % 120 cm high and 85 cm wide
 %\usepackage[size=custom,width=84.1,height=118.9,scale=1.4]{beamerposter}
 \usepackage[orientation=portrait,size=a0,scale=1.2]{beamerposter}
 
@@ -13,6 +12,7 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{tikz}
+\usepackage{siunitx} % units typesetting
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.14}
 
@@ -34,18 +34,19 @@
 
 \author{Sergei Mikhailov \inst{1-3} \and Marek Fajstavr \inst{1,2} \and Petr Horáček \inst{1,2}}
 
-\institute[MendelU]{\inst{1} Department of Xylogenesis and Biomass Allocation, CzechGlobe, CZ \samelineand \inst{2} Department of Wood Science and Technology, Mendel University in Brno, CZ \samelineand \inst{3} Laboratory of Ecology of Plant Communities, Komarov Botanical Institute of the Russian Academy of Sciences, Saint Petersburg, RU}
+\institute[MendelU]{\inst{1} Department of Xylogenesis and Biomass Allocation, CzechGlobe, CZ \samelineand \inst{2} Department of Wood Science and Technology, Mendel University in Brno, CZ \\ \inst{3} Laboratory of Ecology of Plant Communities, Komarov Botanical Institute of the Russian Academy of Sciences, Saint Petersburg, RU}
 %\institute[MendelU]{\inst{1} Department of Xylogenesis and Biomass Allocation, CzechGlobe, Brno, Czech Republic \samelineand \inst{2} Department of Wood Science and Technology, Mendel University in Brno, Brno, Czech Republic \samelineand \inst{3} Laboratory of Ecology of Plant Communities, Komarov Botanical Institute of the Russian Academy of Sciences, Saint Petersburg, Russian Federation}
 
 \footercontent{
-  \includegraphics[height=5cm]{pics/qr}
-  {\LaTeX} \& R code in git repo \hfill
-  \hspace{0cm} XIM5 2022, Würzburg \hfill
-  %\href{https://www.github.com/aplantc0}{github.com/aplantc0}
-  \includegraphics[height=5cm]{pics/logo_mendelu}
-  \includegraphics[height=5cm]{pics/logo_czechglobe}
-  %\href{mailto:mikhailov.s@czechglobe.cz}{mikhailov.s@czechglobe.cz}
-  % (can be left out to remove footer)
+    \includegraphics[height=3cm]{pics/qr}
+    {\LaTeX} \& R code in git repo \hfill
+    \hspace{0cm} XIM5 2022, Würzburg \hfill
+    %\href{https://www.github.com/aplantc0}{github.com/aplantc0}
+    \includegraphics[height=3cm]{pics/dnet}
+    \includegraphics[height=3cm]{pics/logo_mendelu}
+    \includegraphics[height=3cm]{pics/logo_czechglobe}
+    %\href{mailto:mikhailov.s@czechglobe.cz}{mikhailov.s@czechglobe.cz}
+    % (can be left out to remove footer)
 }
 
 % use this to include logos on the left and/or right side of the header:
@@ -61,38 +62,47 @@
 
 \begin{column}{\colwidth}
 
-    \begin{alertblock}{Hypetheses and questions}
-        %\large
-        We studied Scots pine xylem formation on 2 research plots (150--350 m asl), representing managed Scots pine stands aged 40 (\textbf{Young}) and 100 (\textbf{Old}) years in the south of the Czech Republic during the two successive years of 2020 \& 2021.
-        \begin{itemize}
-            \item What are the variation ranges of Scots pine cell morphology parameters under the drought stress? To quantify
-            \item To what extent Scots pine trees can withstand water deficit stress, and is cellular level of observation better allows to identify it?
-            \item What the numerical thresholds in number, radial dimensions of tracheids and tree-ring width, up to which these variables can decline without the tree dieback?
-            \item Is the same mechanism of drought stress reaction in Scots pine revealed regardless of the tree age?
-        \end{itemize}
-    \end{alertblock}
+\begin{alertblock}{Hypotheses and questions}
+    We studied \textit{Pinus sylvestris} L. (Scots pine) xylem formation dynamics for two consecutive years, 2020 and 2021, on two research plots (150--350 m asl), representing managed Scots pine stands of different ages in the south of the Czech Republic -- 40 years of age (\textbf{young}) and 100 years of age (\textbf{old}).
+    \begin{enumerate}
+        \item What are the variation ranges of Scots pine cell morphology parameters under the drought stress?
+        \item What is the threshold value for the number of cells, radial dimension of tracheids, and tree ring width to which these variables can decline without tree dieback?
+        \item To what extent can Scots pine trees withstand water deficit stress, and does observation at the cellular level improve this determination?
+        \item Is the same mechanism revealed as a reaction to drought stress regardless of tree age?
+    \end{enumerate}
+\end{alertblock}
 
-    \begin{block}{Methodology}
-        \heading{Dendroclimatology}
-            Retrospective whole-tree livespan time-series analysis (12 trees). Tree ring width (TRW) measurements, cross-dating, standardization by fitting the Hugershoff function, chronology building (Figure 3); climate--growth relationships: responce and correlation function with T\textsubscript{avg}, P\textsubscript{sum}, SPEI\textsubscript{1}.
-        \heading{Xylogenesis}
-            Following the xylem formation dynamics (6 trees). Weekly microcore sampling, sample preparation, number of cells in each phase was measured under the light microscope with x10--x20 magnification, cell formation phases: i) enlarging; ii) cell-wall thickening; iii) maturation.
-        \heading{Xylem morphology}
-            Quantitative wood anatomy (6 trees). Capture image of the two last fully formed annual rings (2020 \& 2021), image batch processing with ImageMagick, measurements with ImageJ: continuous sequence of lumen diameter and cell wall thickness (Figure 1.
-        \heading{Climatic data}
-            Daily (site): T, RH, \Psi\textsubscript{Soil}, sap flow. Monthly (external): T\textsubscript{avg}, P\textsubscript{sum}, SPEI\textsubscript{1}.
-            \begin{figure}
-                \centering \includegraphics[width=1\textwidth]{pics/sob}
-                \caption{Two consequtive annual rings of 2020 \& 2021 (Old stand), x20 magnification. Cambium is on the right \rightarrow}
-            \end{figure}
-    \end{block}
+\begin{block}{Methodology}
+    \heading{Dendroclimatology}
+        Retrospective growth analysis over the entire tree lifespan (12 trees); tree ring width (TRW) measurements, cross-dating, standardization by fitting the Hugershoff function, chronology building (Figure \ref{fig:hf}); climate--growth relationships: response and correlation function with T\textsubscript{avg}, P\textsubscript{sum}, SPEI\textsubscript{1}.
+    \heading{Xylogenesis}
+        Following the xylem formation dynamics (6 trees); weekly microcore sampling, sample preparation, number of cells in each differentiation phase were measured under the light microscope with 10--20x magnification, the phases: i) enlarging; ii) cell-wall thickening; iii) maturation.
+    \heading{Xylem morphology}
+        Quantitative wood anatomy (6 trees); captured images of the last two fully-formed annual rings (2020 and 2021), image batch processing with ImageMagick, measurements with ImageJ: continuous sequence of lumen diameter and cell wall thickness (CWT) (Figure \ref{fig:xmg}).
+    \heading{Climatic data}
+        Daily (site): T, RH, \Psi\textsubscript{Soil}, sap flow (Figure \ref{fig:sap}). Monthly (external): T\textsubscript{avg}, P\textsubscript{sum}, SPEI\textsubscript{1}.
+        \begin{figure}
+            \centering \includegraphics[width=1\textwidth]{pics/sob}
+            \caption{Two consecutive annual rings from 2020 and 2021 (old stand), 20x magnification. Cambium and phloem are on the right in blue}
+            \label{fig:sob}
+        \end{figure}
+\end{block}
 
-    \begin{block}{Drought stress}
-            \begin{figure}
-                \centering \includegraphics[width=1\textwidth]{pics/sap}
-                \caption{Sap flow during two years of 2020 \& 2021}
-            \end{figure}
-    \end{block}
+\begin{block}{Drought stress}
+        \begin{figure}
+            \centering \includegraphics[width=1\textwidth]{pics/sap}
+            \caption{Sap flow during 2020 and 2021}
+            \label{fig:sap}
+        \end{figure}
+\end{block}
+
+\begin{block}{What is next?}
+    \raggedleft
+    \begin{enumerate}
+        \item To establish functional dependency between xylem formation and environmental factors
+        \item To explain the effect of age on xylem formation under drought
+    \end{enumerate}
+\end{block}
 
 \end{column}
 
@@ -100,40 +110,36 @@
 
 \begin{column}{\colwidth}
 
-    \begin{block}{Results}
-        \heading{Tree ring width}
-            \begin{figure}
-                \centering \includegraphics[width=1\textwidth]{pics/hf}
-                \caption{Raw (left) and indexed (right) TRW chronologies. HF -- the Huggershoff function curve fitting the age trend; RWI -- ring width index}
-            \end{figure}
-        \heading{Xylo- \& morphogenesis}
-            \begin{figure}
-                \centering \includegraphics[width=1\textwidth]{pics/xmg}
-                \caption{TRD -- tracheid radial diameter, CWT -- cell wall thickness, DOY -- day of the year when the process of cell wall thickening began (i.e., TRD has already been defined), EW -- early wood, LW -- late wood (classified based on Mork's criteria}
-            \end{figure}
-    \end{block}
+\begin{block}{Results}
+    \heading{Tree ring width}
+        \begin{figure}
+            \centering \includegraphics[width=1\textwidth]{pics/hf}
+            \caption{Inter-annual growth variability. Raw (left, Huggershoff function curve fitting the age trend) and indexed (right) TRW chronologies, where TRW -- tree ring width, \si{mm}; RWI -- ring width index (low frequency age trend is removed)}
+            \label{fig:hf}
+        \end{figure}
+    \heading{Xylo- \& morphogenesis}
+        \begin{figure}
+            \centering \includegraphics[width=1\textwidth]{pics/xmg}
+            \caption{Intra-annual growth variability. Morphology metrics dated over xylogenesis, where TRD -- tracheid radial diameter, \si{\micro\meter}; CWT -- cell wall thickness, \si{\micro\meter}; DOY -- day of the year when the process of cell wall thickening began (i.e., TRD has already been fixed); EW -- early wood; LW -- late wood (classified according to Mork's criteria); vertical lines are borders between EW/LW border}
+            \label{fig:xmg}
+        \end{figure}
+\end{block}
 
-    \begin{block}{Conclusions}
-        \begin{itemize}
-            \item TRD, CWT varies between
-            \item Number of cells
-            \item Number of cells
-            \item Number of cells
-        \end{itemize}
-    \end{block}
+\begin{block}{Conclusions}
+    \begin{enumerate}
+        \item Number of cells, TRD, and CWT were different in young and old stand under different level of drought stress.
+        \item Preliminarily, the thresholds for young and old stand accordingly are as follows: TRD 10--45 \si{\micro\meter}, CWT 2--6 \si{\micro\meter}, TRW \sim 1 \si{mm}.
+        \item Tree ring width did not reveal any drastic decline linked to drought. Though, the major changes in xylem structure between yound and old stands were due to CWT in 2020.
+        \item Similar mechanism of drought stress reaction is revealed to drought stress regardless of tree age.
+    \end{enumerate}
+\end{block}
 
 \end{column}
 \end{columns}
 
 \begin{columns}[c]
-    \begin{column}{.95\paperwidth}
-    \begin{block}{What is next?}
-        \raggedleft
-        \begin{itemize}
-            \item To study wood formation dynamics in the following years on more Scots pine plots with different age structure in the Czech Republic, and then\dots
-            \item {\dots}To study xylem morphology and climate--growth relationships on the upper limit of species distribution in northern taiga primary (undisturbed) forest communities 
-        \end{itemize}
-    \end{block}
+\begin{column}{0.96\paperwidth}
+
 \end{column}
 
 %\separatorcolumn
