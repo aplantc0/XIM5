@@ -8,5 +8,5 @@ clean:
 compress:
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${file}_comp.pdf ${file}.pdf
 jpg:
-	pdftoppm -jpeg -r 300 ${file}.pdf ${file} && mogrify -verbose -strip -quality 10 ${file}-1.jpg
+	pdftoppm -jpeg -r 300 ${file}_comp.pdf ${file} && mogrify -verbose -strip -quality 10 ${file}-1.jpg
 all: compile clean compress jpg
