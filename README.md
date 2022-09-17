@@ -1,5 +1,6 @@
-Poster for XIM5 Conference, made in LateX. Based on [gemini](https://github.com/anishathalye/gemini) beamer theme.
+Poster for XIM5 Conference made in LaTeX.
 
-![Poster](poster/poster.jpg?raw=true "XIM5 poster")
+Compile `poster.tex` to a `.pdf` with [LuaTeX](https://www.luatex.org/) using `Makefile`. Based on [gemini](https://github.com/anishathalye/gemini) beamer theme.
 
-Compile `poster.tex` to `.pdf` with [LuaLaTeX] using `Makefile`.
+![Poster](poster/poster.jpg?raw=true "XIM5 poster.jpg")
+
